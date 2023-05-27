@@ -4,19 +4,20 @@ module.exports.addANewEmail =  async ( req, res, next ) => {
     try {
         const result = await addANewEmailToWaitList(req.body.email)
 
-        if(!result?.email || result?.email === '') {
-            res.status(500).json({
-                success: false,
-                message: 'Something went wrong',
-            })
-        }
-        if(result?.email) {
-            res.status(201).json({
+        if(result.success) {
+            return res.status(201).json({
                 success: true,
-                message: 'Email added to waitlist successfully',
+                message: result.message,
+                email: result.email
+            })
+        } else {
+            return res.status(403).json({
+                success: false,
+                message: result.message,
                 email: result.email
             })
         }
+        
     } catch (error) {
         next(error)
     }

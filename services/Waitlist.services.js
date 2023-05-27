@@ -1,9 +1,22 @@
 const Waitlist = require('../models/Waitlist.model');
 
 module.exports.addANewEmailToWaitList = async (email) => {
+
+    const isEmailExists = await Waitlist.find({email: email})
+    if(isEmailExists.length > 0) {
+        return {
+            success: false,
+            message: 'Email already exists',
+            email: email
+        }
+    }
+
     const mail = new Waitlist({email: email});
     const savedMail = await mail.save()
+
     return {
-        email: savedMail?.email ? savedMail.email : ''
+        success: true,
+        message: 'Email added to waitlist successfully',
+        email: savedMail.email
     }
 }
