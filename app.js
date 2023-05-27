@@ -12,7 +12,7 @@ const app = express();
 /* ----------------- Express Middlewares ------------------ */
 app.use(cors());
 app.use(express.json());
-app.use(limiter, (req, res, next) => {next()});
+app.use(limiter);
 
 
 /* ----------------- Routes ------------------ */
