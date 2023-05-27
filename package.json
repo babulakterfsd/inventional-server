@@ -1,5 +1,5 @@
 {
-  "name": "instagram-scraper",
+  "name": "inventional-server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,15 +8,14 @@
     "dev": "nodemon server"
   },
   "dependencies": {
-    "chai": "^4.3.7",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-rate-limit": "^6.7.0",
     "mongodb": "^5.4.0",
     "mongoose": "^5.12.2",
-    "puppeteer": "^20.2.1",
-    "scraper-instagram": "^1.0.17"
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
