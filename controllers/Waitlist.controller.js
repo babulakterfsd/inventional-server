@@ -11,7 +11,7 @@ module.exports.addANewEmail =  async ( req, res, next ) => {
             })
         }
         if(result?.email) {
-            res.status(409).json({
+            res.status(201).json({
                 success: true,
                 message: 'Email added to waitlist successfully',
                 email: result.email
