@@ -16,7 +16,7 @@ module.exports.addANewEmailToWaitList = async (email) => {
 
     return {
         success: true,
-        message: 'Email added to waitlist successfully',
+        message: 'Empowering the future together',
         email: savedMail.email
     }
 }
